@@ -1,17 +1,26 @@
 const express = require('express');
 const app = express();
  
-const bookRoute = express.Router();
-let Book = require('../model/Book');
+const censusRoute = express.Router();
+let Census = require('../model/Book');
  
-// Get all Books
-bookRoute.route('/').get((req, res) => {
-    Book.find().then((response) => {
+// Get all Census
+censusRoute.route('/').get((req, res) => {
+    Census.find().then((response) => {
       res.status(200).json(response);
     })
     .catch((error) => {
-      console.error(`Could not get books: ${error}`);
+      console.error(`Could not get census ${error}`);
+  })
+})
+// Add a Census
+censusRoute.route('/add-census').post((req, res) => {
+  Census.create(req.body).then(() => {
+    console.log('Census added successfully');
+  })
+  .catch((error) => {
+    console.error(`Could not save census: ${error}`);
   })
 })
 
-module.exports = bookRoute;
+module.exports = censusRoute;

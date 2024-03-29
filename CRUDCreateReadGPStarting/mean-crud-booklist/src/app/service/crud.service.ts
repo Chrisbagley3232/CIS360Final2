@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Book } from './Book';
+import { Census } from './Book';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -18,9 +18,15 @@ export class CrudService {
  
   constructor(private httpClient: HttpClient) { }
  
-  // Get all books
-  GetBooks() {
+  // Get all census
+  GetCensus() {
     return this.httpClient.get(`${this.REST_API}`);
+  }
+
+  // Add
+  AddCensus(data: Census): Observable<any>{
+    let API_URL = `${this.REST_API}/add-census`;
+    return this.httpClient.post(API_URL, data).pipe(catchError(this.handleError));
   }
  
   // Error 

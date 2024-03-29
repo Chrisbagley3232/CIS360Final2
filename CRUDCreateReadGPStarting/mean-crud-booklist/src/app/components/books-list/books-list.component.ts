@@ -8,14 +8,14 @@ import { CrudService } from './../../service/crud.service';
 })
 export class BooksListComponent implements OnInit {
 
-  Books:any = [];
+  Census:any = [];
  
   constructor(private crudService: CrudService) { }
  
   ngOnInit(): void {
-    this.crudService.GetBooks().subscribe(res => {
+    this.crudService.GetCensus().subscribe(res => {
       console.log(res)
-      this.Books =res;
+      this.Census =res;
     });    
   }
 }

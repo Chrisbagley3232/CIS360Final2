@@ -8,11 +8,13 @@ import { BooksListComponent } from './components/books-list/books-list.component
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AddCensusComponent } from './components/add-census/add-census.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooksListComponent
+    BooksListComponent,
+    AddCensusComponent
   ],
   imports: [
     BrowserModule,

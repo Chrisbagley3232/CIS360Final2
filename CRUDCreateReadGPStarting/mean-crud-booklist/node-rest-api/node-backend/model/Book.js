@@ -1,16 +1,15 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let BookSchema = new Schema({
-    isbn: { type: String },
-    title: { type: String },
-    author: { type: String },
-    description: { type: String },
-    published_year: { type: String },
-    publisher: { type: String },
+let CensusSchema = new Schema({
+    year: { type: String },
+    name: { type: String },
+    numOfPeople: { type: String },
+    hState: { type: String },
+    hCity: { type: String },
     updated_date: { type: Date, default: Date.now }
 }, {
-    collection: 'books'
+    collection: 'census'
 });
 
-module.exports = mongoose.model('Book', BookSchema);
+module.exports = mongoose.model('Census', CensusSchema);

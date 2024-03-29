@@ -1,10 +1,9 @@
-export class Book {
+export class Census {
     _id!: String;
-    isbn!: String;
-    title!: String;
-    author!: String;
-    description!: String;
-    published_year!: String;
-    publisher!: String;
+    year!: String;
+    name!: String;
+    numOfPeople!: String;
+    hState!: String;
+    hCity!: String;
     updated_date!: Date;
 }
