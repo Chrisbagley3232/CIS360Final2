@@ -14,7 +14,7 @@ import { AddCensusComponent } from './components/add-census/add-census.component
   declarations: [
     AppComponent,
     BooksListComponent,
-    AddCensusComponent
+    AddCensusComponent,
   ],
   imports: [
     BrowserModule,

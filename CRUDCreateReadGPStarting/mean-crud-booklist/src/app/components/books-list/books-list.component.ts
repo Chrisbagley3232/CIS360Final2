@@ -18,4 +18,18 @@ export class BooksListComponent implements OnInit {
       this.Census =res;
     });    
   }
+
+  onDelete(id: any): any{
+    this.crudService.DeleteCensus(id).subscribe(res => {
+      console.log(res)
+    })
+    location.reload();
+  }
+
+  //onUpdate(id: any): any{
+    //this.crudService.UpdateCensus(id).subscribe(res => {
+      //console.log(res)
+    //})
+    //location.reload();
+  //}
 }

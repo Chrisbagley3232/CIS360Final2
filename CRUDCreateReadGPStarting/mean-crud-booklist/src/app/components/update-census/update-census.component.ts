@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { CrudService } from 'src/app/service/crud.service';
 
 @Component({
-  selector: 'app-add-census',
-  templateUrl: './add-census.component.html',
-  styleUrls: ['./add-census.component.css']
+  selector: 'app-update-census',
+  templateUrl: './update-census.component.html',
+  styleUrls: ['./update-census.component.css']
 })
-export class AddCensusComponent implements OnInit {
+export class UpdateCensusComponent {
   censusForm: FormGroup;
 
   constructor(

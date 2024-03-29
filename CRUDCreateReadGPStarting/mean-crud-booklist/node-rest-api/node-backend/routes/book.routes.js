@@ -22,5 +22,16 @@ censusRoute.route('/add-census').post((req, res) => {
     console.error(`Could not save census: ${error}`);
   })
 })
+// Delete a Census
+censusRoute.route('/delete-census/:id').delete((req, res) => {
+  console.log(`Preparing to delete: ${req.params.id}`);
+  Census.findByIdAndDelete(req.params.id).then(() => {
+    console.log('Census deleted successfully.');
+    res.status(200);
+  })
+  .catch((error) => {
+    console.error(`Could not delete census: ${error}`);
+  })
+})
 
 module.exports = censusRoute;
